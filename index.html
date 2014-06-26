@@ -1,0 +1,166 @@
+<html>
+<head>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/animate.min.css" rel="stylesheet">
+        <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+<!--<script>
+//On scroll call the draw function
+$(window).scroll(function() {
+    drawLines();
+});
+
+//If you have more than one SVG per page this will pick it up
+function drawLines(){
+    $.each($("#animation"), function(i, val){
+      var line = val;
+      drawLine($(this), line);
+    });
+}
+
+//draw the line
+function drawLine(container, line){
+  var length = 0;
+  var pathLength = line.getTotalLength();
+  var distanceFromTop = container.offset().top - $(window).scrollTop();
+  var percentDone = 1 - (distanceFromTop / $(window).height());
+  length = percentDone * pathLength;
+  line.style.strokeDasharray = [length,pathLength].join(' ');
+  console.log("strokeDasharray: "+[length,pathLength].join(' '));
+}
+
+</script>-->
+ <center><h2>Scroll Till 4000</h2></center>
+</head>
+<body>
+<div id="info">0&lt;--</div>
+<section id="text1">
+  <div class="bcg"></div>
+ 
+  <div id="scrollBaby"
+    data-top="transform:translateY(0px)"
+    data--875-top="transform:translateY(300px)"
+    data-anchor-target="#text1"
+  ></div> 
+  <div id="tree">
+
+    <div class="item tree1"
+      data-top="opacity: 0;" 
+      data--1600-top="opacity: 0; transform: scale(0.5); bottom: 71px;" 
+      data--2000-top="opacity: 1; transform: scale(0.5); bottom: 90px;" 
+      data--4000-top="opacity: 1; transform: scale(1); bottom: 426px;" 
+      data-anchor-target="#text1"     
+    >
+<div class="container well">
+                <div class="content cover text-center">
+                    <div class="row well">
+                        <div class="col-lg-4 well">
+    <p id="data">Static SVG</p><img src="graphicstatic.svg">
+    </div>
+      <div class="col-lg-4">
+    <p id="data">Motion SVG</p><img src="graphic.svg">
+    </div>
+      <div class="col-lg-4">
+    <p id="data">Reflex SVG</p><img src="graphicreflex.svg">
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="item tree2"
+      data-top="opacity: 0; transform: scale(0.3); bottom: 71px;" 
+      data--2000-top="opacity: 0; transform: scale(0.3); bottom: 71px;" 
+      data--2212-top="opacity: 1; transform: scale(0.45); bottom: 81px;" 
+      data--4000-top="opacity: 1; transform: scale(1); bottom: 309px;" 
+      data-anchor-target="#text1"
+    ></div>  
+    <div class="item tree3"
+      data-top="opacity: 0; transform: scale(0.3);" 
+      data--2212-top="opacity: 0; transform: scale(0.3); bottom: 71px;" 
+      data--2700-top="opacity: 1; transform: scale(0.55); bottom: 81px;" 
+      data--4000-top="opacity: 1; transform: scale(1); bottom: 205px;" 
+      data-anchor-target="#text1"
+    ></div>
+    
+    <div class="item tree4"
+      data-top="opacity: 0; transform: scale(0.3);" 
+      data--3000-top="opacity: 0; transform: scale(0.52);" 
+      data--3300-top="opacity: 1; transform: scale(0.60);" 
+      data--4000-top="opacity: 1; transform: scale(1);" 
+      data-anchor-target="#text1"
+    ></div>
+    
+   
+  
+
+     </div>
+  </div>
+</section>
+
+</body>
+<style>
+#data
+{
+  font-size:40px;
+}
+#info
+{
+  position:fixed;
+  top:20px;
+  left:20px;
+  background-color:rgba(0,0,0,0.5);
+  color:#fff;
+  padding:20px;
+  z-index:9999;
+}
+#animation
+{
+margin-top:200px;
+}
+#text1 .bcg {
+  height: 100%;
+  width: 100%;
+  background-image: url('img/bcg_paper.png');
+  background-repeat: repeat;
+  background-position: center top;
+  background-attachment: fixed;
+}
+#scrollBaby {
+  width: 184px;
+  height: 286px;
+  background: url('img/img_get-scrolling.png') no-repeat top left;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  margin-left: -92px;
+}
+#text1 #tree {
+  width: 380px; height: 550px;
+  position: fixed;
+  top: 50%;
+  left: 10%;
+  margin: -275px 0 0 -190px;
+}
+#text1 .item {position: absolute; top: 0; left: 0;}
+#text1 .tree1 {bottom: 0px; left: 0px; top: auto;}
+#text1 .tree2 {bottom: 309px; left: 73px; top: auto;}
+</style>
+
+
+<center>
+</img>
+</center>
+<script type="text/javascript" src="dist/skrollr.min.js"></script>
+ <script src="assets/js/bootstrap.min.js"></script>
+ <script src="js/jquery.js"></script>
+<script type="text/javascript">
+var s = skrollr.init({
+  render: function(data){
+    //log the current scroll position.
+    $('#info').text(data.curTop);
+    }
+    });
+</script>
+</html>
